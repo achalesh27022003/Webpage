@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+background-color:#ffa500;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: 2px solid black;
+  outline: none;
+  color: orange;
+  padding: 14px 16px 14px 8px;
+  background-color:  yellow;
+  font-family: inherit;
+  margin: 5px;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+color:pink;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+border:1.5px solid black;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float:none;
+  color: white;
+background-color:black;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+border:1.2px solid grey;
+
+}
+
+.dropdown-content a:hover {
+  background-color:pink;
+}
+.dropdown-content a:visited {
+  background-color:DodgerBlue;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("nav-img.jpg");
+
+  min-height: 567px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position:relative ;
+  margin: 10px;
+  width: 600px;
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: mediumseagreen;
+border:3px solid black;
+padding:10px 5px 1opx 5px;
+
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: green;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.top-left{
+position:absolute;
+top:60px;
+left:610px;
+font-size:13px;
+}
+hr.new3 {
+  border-top: 1px dotted red;
+}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+border:1.5px  solid black;
+}
+
+/* Caption text */
+.text {
+  color: red;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+font-weight:bold;
+}
+
+/* Number text (1/14etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+border:1px solid black;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller sns, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px
+}
+}
+.middle{
+background-color:#99ff33;
+font-size:20px;
+color:red;
+text-align:center;}
+/* Style the header */
+header {
+  background-color: #666;
+margin:auto;
+  padding: 15px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 10%;
+  height: 620px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 15px 20px 15px 24px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 15px 20px 15px 24px;
+  width:90 %;
+  background-color: #f1f1f1;
+  height: 620px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+height:570px;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+   border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+.checked {
+  color: orange;
+}
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+.instagram {
+background:purple;
+color:white;
+}
+.phone{
+background:green;
+color:white;
+}
+.gmail{
+background:red;
+color:white;
+}
+
+</style>
+</head>
+<body  onload="myFunction()" style="margin:0;">
+<div class="bg-img">
+<div class="container">
+<div class="top-left" title="self- written"><pre><b>
+भिन्न-भिन्न भाषाएँ, भिन्न-भिन्न ये परम्पराएँ,
+विश्व पटल की सारी विविधताएँ,
+भिन्न भिन्न काल खंड में निर्मित किले और ढाँचे,
+ये सब ही धरोहर कहलाएँ।
+दे अंधविश्वास करार,
+अपनी परंपरा को ना दे यूँ ही नकार,
+कर के प्रयोग विवेक का,
+तलाशें इनका वैज्ञानिक आधार।
+धरोहर पूर्वजों की,भविष्य की आधारशिला है,
+करें हम संरक्षण इनका ,जो हमें विरासत में मिला है।</b></pre></div>
+<div class="topnav">
+<a href="#home" title="home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn" title="Monuments"><b>Monuments
+      </b><i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<a href="https://en.wikipedia.org/wiki/Statue_of_Unity" target="blank">Statue of Unity</a>
+      <a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="blank">Taj Mahal</a>
+      <a href="https://en.wikipedia.org/wiki/Victoria Memorial_Kolkata" target="blank">Victoria Memorial</a>
+     <a href="https://en.wikipedia.org/wiki/Qutb_Minar" target="blank">Qutub Minar</a>
+   <a href="https://en.wikipedia.org/wiki/Hawa Mahal" target="blank">Hawa Mahal</a>
+<a href="https://en.wikipedia.org/wiki/ Konark Sun Temple" target="blank"> Sun Temple</a>
+<a href="https://en.wikipedia.org/wiki/Ajanta_Caves" target="blank">Ajanta Caves</a>
+<a href="https://en.wikipedia.org/wiki/Ellora_Caves" target="blank">Ellora Caves</a>
+<a href="https://en.wikipedia.org/wiki/Khajuraho_(town)" target="blank">Khajuraho</a>
+<a href="https://en.wikipedia.org/wiki/Jantar_Mantar" target="blank">Jantar Mantar</a>
+<a href="https://en.wikipedia.org/wiki/Sarnath" target="blank">Sarnath</a>
+<a href="https://en.wikipedia.org/wiki/Sanchi" target="blank">Sanchi Stupa</a>
+<a href="https://en.wikipedia.org/wiki/Bibi_Ka_Maqbara" target="blank">Bibi ka Maqbra</a>
+<a href="https://en.wikipedia.org/wiki/Mysore_Palace" target="blank">Mysore Palace</a>
+<a href="https://en.wikipedia.org/wiki/Red_Fort" target="blank">Red Fort</a>
+<a href="https://en.wikipedia.org/wiki/Chittor_Fort" target="blank">Chittor Fort</a>
+<a href="https://en.wikipedia.org/wiki/India_Gate" target="blank">India Gate</a>
+<a href="https://en.wikipedia.org/wiki/Humayun%27s_Tomb" target="blank">Humayun Tomb</a>
+    </div>
+  </div>
+<div class="dropdown">
+ <button class="dropbtn" title="Pilgrimages"><b>Pilgrimages
+      </b><i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<a href="https://en.wikipedia.org/wiki/Vaishno_Devi" target="blank">Vaishno Devi</a>
+<a href="https://en.wikipedia.org/wiki/Amarnath_Temple" target="blank">Amarnath Temple</a>
+<a href="https://en.wikipedia.org/wiki/Hazratbal_Shrine" target="blank">HazratBal Dargah</a>
+<a href="https://en.wikipedia.org/wiki/Shankaracharya_Temple" target="blank">Shankracharya Temple</a>
+<a href="https://en.wikipedia.org/wiki/Golden_Temple" target="blank">Golden Temple</a>
+<a href="https://en.wikipedia.org/wiki/Jama_Masjid,_Delhi" target="blank">Jama Masjid</a>
+<a href="https://en.wikipedia.org/wiki/Swaminarayan_Akshardham_(New_Delhi)" target="blank">AksharDham</a>
+<a href="https://en.wikipedia.org/wiki/Ajmer_Sharif_Dargah" target="blank">Ajmer Sharif Dargah</a>
+<a href="https://en.wikipedia.org/wiki/Brahma_Temple,_Pushkar" target="blank">Brahma Mandir</a>
+<a href="https://en.wikipedia.org/wiki/Shrinathji_Temple" target="blank">Srinathji Temple</a>
+<a href="https://en.wikipedia.org/wiki/Somnath_temple" target="blank">Somnath Temple</a>
+<a href="https://en.wikipedia.org/wiki/Dwarkadhish_Temple" target="blank">Dwrkadhish Temple</a>
+<a href="https://en.wikipedia.org/wiki/Siddhivinayak_Temple,_Mumbai" target="blank">Siddhivinayak Temple</a>
+<a href="https://en.wikipedia.org/wiki/Sai_Baba_of_Shirdi" target="blank">Shirdi Sai Baba</a>
+<a href="https://en.wikipedia.org/wiki/Meenakshi_Temple" target="blank">Meenakshi Temple</a>
+<a href="https://en.wikipedia.org/wiki/Ramanathaswamy_Temple" target="blank">Rameswaram Temple</a>
+<a href="https://en.wikipedia.org/wiki/Venkateswara_Temple,_Tirumala" target="blank">Tirupati Balaji</a>
+<a href="https://en.wikipedia.org/wiki/Jagannath_Temple,_Puri" target="blank">Jagannath Temple</a>
+<a href="https://en.wikipedia.org/wiki/Durga_Puja" target="blank">Durga Pooja </a>
+<a href="https://en.wikipedia.org/wiki/Kashi_Vishwanath_Temple" target="blank">Kashi Vishvanath Temple</a>
+<a href="https://en.wikipedia.org/wiki/Mahakaleshwar_Jyotirlinga" target="blank">Mahakaleshwar Temple</a>
+<a href="https://en.wikipedia.org/wiki/Chota_Char_Dham" target="blank">Char Dham ,Uttarkhand</a>
+</div>
+</div>
+<div class="dropdown">
+ <button class="dropbtn" title=
+"Dishes & Drinks"><b>Dishes & Drinks
+      </b><i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<a href="https://en.wikipedia.org/wiki/Kashmiri_cuisine" target="blank">Kashmiri Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Punjabi_cuisine" target="blank">Punjabi Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Rajasthani_cuisine" target="blank">Rajasthani Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Gujarati_cuisine" target="blank">Gujrati Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Maharashtrian_cuisine" target="blank">Maharashtrian Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/South_Indian_cuisine" target="blank">South Indian Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Bengali_cuisine" target="blank">Bengali Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Bihari_cuisine" target="blank">Bihari Cuisine</a>
+<a href="https://en.wikipedia.org/wiki/Cuisine_of_Uttar_Pradesh" target="blank">Cuisine of Uttar Pradesh</a>
+</div>
+</div>
+<div class="dropdown">
+ <button class="dropbtn" title="Dances"><b>Dances
+      </b></a><i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<a href="https://en.wikipedia.org/wiki/Dance_in_India#Classical_dance" target="blank">Classical Dances</a>
+<a href="https://en.wikipedia.org/wiki/Dance_in_India#Folk_and_tribal_dance_forms" target="blank">Folk and Tribal Forms</a>
+<a href="https://en.wikipedia.org/wiki/Dance_in_India#Contemporary_Dance" target="blank">Contemporary Dances</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="new3">
+<div class="middle">
+<a title="Glimpses of India"><b>Glimpses of India</b></a>
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext">1 / 12</div>
+  <img src="1.jpg" style="width:100%">
+  <div class="text" title="Caption"><pre>"Not a piece of architecture,but the proud passions of emperor's love wrought in living stones"</pre></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 12</div>
+  <img src="2.jpg" style="width:100%">
+  <div class="text"><pre>
+"एक सुकून है इन बंजर दीवारों में, 
+खामोशी चीखें अक्सर गूंजा करती है इनमें|
+    वीरता का यश गान करती है,
+ रणभूमि के वीरों को शत शत नमन करती है  यह दीवारें|"</pre>
+</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 12</div>
+  <img src="3.jpg" style="width:100%">
+  <div class="text" title="Quotes"><pre>
+"विश्व पटल पर है पहचान  इनकी 
+आसाम की चाय के बागान है , 
+जो देश की  जान और शान|"</pre></div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 12</div>
+  <img src="4.webp" style="width:100%">
+  <div class="text" title="Caption"><pre>"Sikhism Holiest Shrine,delightful place to contemplate the draw of faith"
+ </pre></div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">5 / 12</div>
+  <img src="5.jpg" style="width:100%">
+  <div class="text" title="Caption"><pre>
+"Have you ever thought of beautiful,colorful architectural shrine?
+Meenakshi Temple will then blow your mind."
+ </pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">6 / 12</div>
+  <img src="6.jpg" style="width:100%">
+  <div class="text" title="Caption"><pre>
+"Have you ever wondered from where flag is hosted on Independence Day?
+  Then Red Fort ,castle of red marble will strike to your mind."
+</pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">7 / 12</div>
+  <img src="7.jpg" style="width:100%">
+  <div class="text" title="Caption"><pre>
+"Have you ever imagined an Icy Shiv Linga , 
+then check out Amarnath Temple in Pilgrimages section now!!!"</pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">8 / 12</div>
+  <img src="8.jpg" style="width:100%">
+  <div class="text" title="Lines"><pre>
+"बनने के लिए सूरमा जरा चख कर तो देखो, 
+राजस्थान का सुप्रसिद्ध दाल बाटी चूरमा|"
+</pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">9 / 12</div>
+  <img src="9.jpg" style="width:100%">
+  <div class="text" title="caption"><pre>
+"Are you fond of icy milk shake with Faluda then,
+Madurai's Famous Jigarthanda is for you".
+</pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">10 / 12</div>
+  <img src="10.jpeg" style="width:100%">
+  <div class="text" title="caption"><pre>
+"मसालेदार Fast Food में इसने मारी बाजी, 
+पेश है आपके लिए मुंबई की प्रसिद्ध पाव भाजी|"
+</pre>
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">11 / 12</div>
+  <img src="11.jpg" style="width:100%">
+  <div class="text" title="caption"><pre>
+"Let's have some fun with classical dance!!!"
+</div>
+</div>
+<div class="mySlides fade">
+   <div class="numbertext">12 / 12</div>
+  <img src="12.jpg" style="width:100%">
+  <div class="text" title="caption">
+<pre>
+"Are you interested in energetic dance,
+then this Punjabi Bhangra is for you!!!"
+</pre>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+ <span class="dot"></span> 
+ <span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+<span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<hr class="new3">
+<header>
+  <h2 title="General Information"><u>General Information</u></h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#" title="Message">Message</a></li>
+      <li><a href="#" title=" Important Date">Important Date</a></li>
+      <li><a href="#" title="About Us">About us</a></li>
+    </ul>
+  </nav>
+  <div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <article>
+    <h1 title="Message"><mark>Message</mark></h1>
+    <p title="Keep in Mind">India is one of the oldest civilization of the world. We have  different types of varieties on ground of culture , language , festivals , caste , race , food, dances and heritage. These all </p>
+    <p title="Keep in Mind">backgrounds and variations tie us in bond of brotherhood , unity , love and friendship. We all are integral part of democractic civilization that promotes peace and harmony.</p>
+ <p title="Keep in Mind">But in past 2 - 3 decades ,our country is facing many protests , shutdowns and strikes on basis of grounds mentioned above. So, dear  everyone it is now high time to preserve</p>
+<p title="Keep in Mind"> and protect our  <mark>'Unity in Diversity' </mark> . So ,let's all we pledge to make our country as original version of <mark>' सोने  की चिड़िया '.</mark> </p>
+  <h1 title="Important Date"><mark>Important Date</mark></h1>
+<p title="Remember It">World Heritage Day - विश्व धरोहर दिवस - 18 April .</p>
+<p title="Remember It">World Heritage Day is celebrated every year  in more than 150 countries all over the world on 18,April established in 1982 by ICOMOS </p>
+<p title="Remember It">presenting importance to cultural monuments and sites , aiming to promote awareness about diversity of cultural heritage of humanity , their vulnerability ,</p>
+<p title="Remember It"> and efforts required for their protection and conservation.</p>
+<h1 title="About Us"><mark>About Us</mark></h1>
+<p title="Believe in Yourself">I  am an engineering aspirant pursuing B.Tech (ECE) from IIIT Kota , <a href="http://www.mnit.ac.in/" target="blank">MNIT Campus</a> (Jaipur) . I am highly enthusiaticlly interested to work </p>
+<p title="Believe in Yourself"> in field of <mark>Content Writing  and Video Editing</mark> . I am also fond of making exciting websites , doing projects  and magazine editing. </p>
+<p title="Believe in Yourself"> I have my <mark>You Tube channel Fast Learn</mark> for educational , fact - based, logical videos which will blow your mind.</p>
+<p title="Believe in Yourself">I would be glad to <mark>accompany  you as TeamMate if you are also fond of above fields and want to work on them.</mark></p>
+<p title="Believe in Yourself"> You are always welcome to contact me freely anywhere , anytime you want. Till then</p>
+<p  title="Maintain Social Distance "><b> Stay Home , Stay Safe. (Be a Warrior in fight against COVID-19)</b></p>
+  
+</article>
+</div>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</section>
+
+
+<footer><h2><u>Star Rating </u></h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<h2><u>Contact Us</u> </h2>
+<p><a href="https://www.facebook.com/achalesh.lakhotiya.9" class="facebook" target="blank" title="Facebook"><i class="fa fa-facebook"></i></a><br> </p>
+ <p> <a href="https://twitter.com/AchaleshL" class="twitter" target="blank"  title="Let Us Tweet"><i class="fa fa-twitter"></i></a> <br></p> 
+  <p><a href="https://www.indiaculture.nic.in/world-heritage" class="google" target="blank"  title="Google Official Website"><i class="fa fa-google"></i></a> <br> </p>
+  <p><a href="https://www.linkedin.com/in/achalesh-lakhotiya-595196191/" class="linkedin" target="blank"  title="LinkedIn"><i class="fa fa-linkedin"></i></a><br> </p>
+<p>  <a href="https://youtu.be/fPTRZRzPY3c" class="youtube" target="blank" ><i class="fa fa-youtube"  title="Like Share & Subscribe"></i></a> </p>
+<p>  <a href="https://www.instagram.com/achalesh_lakhotiya/?hl=en" class="instagram" target="blank"  title="Instagram"><i class="fa fa-instagram"></i></a> </p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a  class="phone" title="Call Me"><i class="fa fa-phone"></i></a> :&nbsp&nbsp&nbsp+917023320149</p>
+<p> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a class="gmail" title="Mail Me"><i class="fa fa-envelope"></i></a>&nbsp:&nbsp&nbsp2019kuec2036@iiitkota.ac.in </p><br><br>
+<p> All Rights Reserved| &nbsp&nbsp&nbsp&nbsp&nbsp&nbspCopyright<img src="14.png" width="25px" height="25px">example.com</p>
+ <p>By agreeing Terms and Conditions|</p>
+</footer>
+
+
+</body>
+</html>
